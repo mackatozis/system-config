@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # This script enables you to switch between steam accounts
-# without the need to enter credential and a Steam Guard 
-# code everytime.
+# without the need to enter credentials and a Steam Guard 
+# code everytime you try to switch accounts.
 #
 # Usage: $ bash steam-autologin USERNAME
 # Note: You will need to put your credentials and check
