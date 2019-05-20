@@ -17,26 +17,26 @@ BOLD=$(tput bold) # Bold
 
 
 if ! [ -x "$(command -v steam)" ]; then
-  echo ">> ${BOLD}${COLOR_RED}Error:${RESET} ${BOLD}Steam${RESET} is not installed." >&2
-  exit 1
+    echo ">> ${BOLD}${COLOR_RED}Error:${RESET} ${BOLD}Steam${RESET} is not installed." >&2
+    exit 1
 fi
 
 if [ ! -f $REGISTRY ]
-	then
-		echo ">> ${BOLD}${COLOR_RED}Error:${RESET} Couldn't find $REGISTRY."
-		exit 1
+    then
+        echo ">> ${BOLD}${COLOR_RED}Error:${RESET} Couldn't find $REGISTRY."
+        exit 1
 fi
 
 if [ $# -eq 0 ]
-	then
-		echo ">> ${BOLD}${COLOR_RED}Error:${RESET} No username supplied. Please try again."
-		exit 1
+    then
+        echo ">> ${BOLD}${COLOR_RED}Error:${RESET} No username supplied. Please try again."
+        exit 1
 elif [ ${#1} -lt 4 ]
-	then
-		echo ">> ${BOLD}${COLOR_RED}Error:${RESET} Username too short. Please try again."
-		exit 1
+    then
+        echo ">> ${BOLD}${COLOR_RED}Error:${RESET} Username too short. Please try again."
+        exit 1
 else
-	USERNAME=$1
+    USERNAME=$1
 fi
 
 sed -i "s/\"AutoLoginUser\"\t\t[^ ]*/\"AutoLoginUser\"\t\t\"${USERNAME}\"/" $REGISTRY
