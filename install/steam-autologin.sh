@@ -17,7 +17,7 @@ BOLD=$(tput bold) # Bold
 
 
 if ! [ -x "$(command -v steam)" ]; then
-  echo ">> ${BOLD}${COLOR_RED}Error:${RESET} steam is not installed." >&2
+  echo ">> ${BOLD}${COLOR_RED}Error:${RESET} ${BOLD}Steam${RESET} is not installed." >&2
   exit 1
 fi
 
