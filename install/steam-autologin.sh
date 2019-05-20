@@ -1,15 +1,25 @@
 #!/bin/bash
 
-RESET=$(tput sgr0)
-COLOR_RED=$(tput setaf 1)
-BOLD=$(tput bold)
+# This script enables you to switch between steam accounts
+# without the need to enter credential and a Steam Guard 
+# code everytime.
+#
+# Usage: $ bash steam-autologin USERNAME
+# Note: You will need to put your credentials and check
+# the box 'Remember Me' the first time you run the script.
+
+# Steam registry location
+REGISTRY=$(echo "$HOME/.steam/registry.vdf")
+# Custom colors
+RESET=$(tput sgr0) # Text Reset
+COLOR_RED=$(tput setaf 1) # Red
+BOLD=$(tput bold) # Bold
+
 
 if ! [ -x "$(command -v steam)" ]; then
   echo ">> ${BOLD}${COLOR_RED}Error:${RESET} steam is not installed." >&2
   exit 1
 fi
-
-REGISTRY=$(echo "$HOME/.steam/registry.vdf")
 
 if [ ! -f $REGISTRY ]
 	then
