@@ -15,9 +15,13 @@ STATUS_DICT = {
 }
 
 DEVICE_TYPE = {
-    'keyboard' : "\U0001F5AE", 
-    'mouse' : "\U0001F5B1", 
-    'headset' : "\U0001F3A7", 
+    'keyboard' : "\U0001F5AE",
+    'mouse' : "\U0001F5B1",
+    'mousemat' : None,
+    'core' : None,
+    'keypad' : None,
+    'headset' : "\U0001F3A7",
+    'accessory' : None
 }
 
 # Create a DeviceManager. This is used to get specific devices
@@ -65,7 +69,7 @@ for device in device_manager.devices:
         print ("{}\nStatus: {} {}".format(device.name, STATUS_DICT[status], status))
         exit()
         
-    if device_type is not None and (device_type == 'keyboard' or device_type == 'mouse' or device_type == 'headset'):
+    if device_type is not None and DEVICE_TYPE[device_type] is not None and status != 'Disconnected':
         print ("{} {}%".format(DEVICE_TYPE[device_type], battery_level))
     else:
         print ("{} {}%".format(STATUS_DICT[status], battery_level))
