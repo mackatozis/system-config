@@ -51,9 +51,8 @@ device_type = parameters['type']
 # Iterate over each device
 for device in device_manager.devices:
     
-    if device_type is not None:
-        if device_type != device.type:
-            continue
+    if (device_type is not None and device_type != device.type) or device.has("battery") == False:
+        continue
 
     status = ''
     battery_level = device.battery_level;
