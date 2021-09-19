@@ -1,0 +1,3 @@
+[submodule "config/csgo-config"]
+	path = config/csgo-config
+	url = https://github.com/mackatozis/csgo-config
